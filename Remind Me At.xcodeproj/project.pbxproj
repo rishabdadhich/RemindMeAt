@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185439251F714C33006321F2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185439241F714C33006321F2 /* CoreDataManager.swift */; };
+		185439271F715D2E006321F2 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185439261F715D2E006321F2 /* Utilities.swift */; };
+		185439291F715D8C006321F2 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185439281F715D8C006321F2 /* NotificationManager.swift */; };
 		1855681A1F6FF32100147959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185568191F6FF32100147959 /* AppDelegate.swift */; };
-		1855681C1F6FF32100147959 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855681B1F6FF32100147959 /* ViewController.swift */; };
 		1855681F1F6FF32100147959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1855681D1F6FF32100147959 /* Main.storyboard */; };
 		185568221F6FF32100147959 /* Remind_Me_At.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 185568201F6FF32100147959 /* Remind_Me_At.xcdatamodeld */; };
 		185568241F6FF32100147959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 185568231F6FF32100147959 /* Assets.xcassets */; };
 		185568271F6FF32100147959 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 185568251F6FF32100147959 /* LaunchScreen.storyboard */; };
+		185568301F6FF3C100147959 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855682F1F6FF3C100147959 /* LocationManager.swift */; };
+		187466121F735A4F0092C745 /* ReminderMasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187466111F735A4F0092C745 /* ReminderMasterTableViewController.swift */; };
+		187466141F735A690092C745 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187466131F735A690092C745 /* ReminderTableViewCell.swift */; };
+		187466161F735B050092C745 /* ReminderDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187466151F735B050092C745 /* ReminderDetailTableViewController.swift */; };
+		187466191F742CEA0092C745 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187466181F742CEA0092C745 /* MapKit.framework */; };
+		1876C0FB1F74BFF0004BDD62 /* SearchLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876C0FA1F74BFF0004BDD62 /* SearchLocationTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		185439241F714C33006321F2 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		185439261F715D2E006321F2 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		185439281F715D8C006321F2 /* NotificationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		185568161F6FF32100147959 /* Remind Me At.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Remind Me At.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		185568191F6FF32100147959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1855681B1F6FF32100147959 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1855681E1F6FF32100147959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		185568211F6FF32100147959 /* Remind_Me_At.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Remind_Me_At.xcdatamodel; sourceTree = "<group>"; };
 		185568231F6FF32100147959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		185568261F6FF32100147959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		185568281F6FF32100147959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1855682F1F6FF3C100147959 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		187466111F735A4F0092C745 /* ReminderMasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderMasterTableViewController.swift; sourceTree = "<group>"; };
+		187466131F735A690092C745 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
+		187466151F735B050092C745 /* ReminderDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderDetailTableViewController.swift; sourceTree = "<group>"; };
+		187466181F742CEA0092C745 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1876C0FA1F74BFF0004BDD62 /* SearchLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187466191F742CEA0092C745 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1813910A1F76D167004C6EE0 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				1876C0FA1F74BFF0004BDD62 /* SearchLocationTableViewController.swift */,
+				187466151F735B050092C745 /* ReminderDetailTableViewController.swift */,
+				187466131F735A690092C745 /* ReminderTableViewCell.swift */,
+				187466111F735A4F0092C745 /* ReminderMasterTableViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		1855680D1F6FF32100147959 = {
 			isa = PBXGroup;
 			children = (
+				1813910A1F76D167004C6EE0 /* controller */,
+				1855682E1F6FF36200147959 /* Helper */,
 				185568181F6FF32100147959 /* Remind Me At */,
 				185568171F6FF32100147959 /* Products */,
+				187466171F742CEA0092C745 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				185568191F6FF32100147959 /* AppDelegate.swift */,
-				1855681B1F6FF32100147959 /* ViewController.swift */,
 				1855681D1F6FF32100147959 /* Main.storyboard */,
 				185568231F6FF32100147959 /* Assets.xcassets */,
 				185568251F6FF32100147959 /* LaunchScreen.storyboard */,
@@ -65,6 +95,25 @@
 				185568201F6FF32100147959 /* Remind_Me_At.xcdatamodeld */,
 			);
 			path = "Remind Me At";
+			sourceTree = "<group>";
+		};
+		1855682E1F6FF36200147959 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				185439241F714C33006321F2 /* CoreDataManager.swift */,
+				1855682F1F6FF3C100147959 /* LocationManager.swift */,
+				185439261F715D2E006321F2 /* Utilities.swift */,
+				185439281F715D8C006321F2 /* NotificationManager.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		187466171F742CEA0092C745 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				187466181F742CEA0092C745 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +188,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1855681C1F6FF32100147959 /* ViewController.swift in Sources */,
+				1876C0FB1F74BFF0004BDD62 /* SearchLocationTableViewController.swift in Sources */,
+				187466161F735B050092C745 /* ReminderDetailTableViewController.swift in Sources */,
+				185439271F715D2E006321F2 /* Utilities.swift in Sources */,
+				185568301F6FF3C100147959 /* LocationManager.swift in Sources */,
+				187466121F735A4F0092C745 /* ReminderMasterTableViewController.swift in Sources */,
+				187466141F735A690092C745 /* ReminderTableViewCell.swift in Sources */,
 				185568221F6FF32100147959 /* Remind_Me_At.xcdatamodeld in Sources */,
+				185439291F715D8C006321F2 /* NotificationManager.swift in Sources */,
+				185439251F714C33006321F2 /* CoreDataManager.swift in Sources */,
 				1855681A1F6FF32100147959 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +357,7 @@
 				1855682D1F6FF32100147959 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
