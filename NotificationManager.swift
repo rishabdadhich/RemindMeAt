@@ -13,15 +13,15 @@ import  UserNotifications
 struct NotificationManager {
     //Mark: variables
     
-  /*  You use the shared UNUserNotificationCenter object to schedule notifications and manage notification-related behaviors in your app or app extension. The shared user notification center object supports both local or remote notifications */
+    /*  You use the shared UNUserNotificationCenter object to schedule notifications and manage notification-related behaviors in your app or app extension. The shared user notification center object supports both local or remote notifications */
     
     let notificationCenter = UNUserNotificationCenter.current()
     
     //Mark: function
     func addLocationEvent(forReminder reminder: Reminder, whenleaving: Bool) -> UNLocationNotificationTrigger? {
         
-  /*      A UNLocationNotificationTrigger object causes the delivery of a notification when the device enters or leaves a specified geographic region.
-        */
+        /*      A UNLocationNotificationTrigger object causes the delivery of a notification when the device enters or leaves a specified geographic region.
+         */
         if let location = reminder.location, let identifier = reminder.identifier{
             
             let center = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
@@ -46,7 +46,7 @@ struct NotificationManager {
         
         if let text = reminder.text, let identifier = reminder.identifier, let notificationTrigger = trigger{
             
-      /*      A UNMutableNotificationContent object contains the data associated with a notification. You use the properties of this class to specify the parameters of a local notification, such as whether the notification adds a badge to the app’s icon, plays a notification sound, or displays an alert. */
+            /*      A UNMutableNotificationContent object contains the data associated with a notification. You use the properties of this class to specify the parameters of a local notification, such as whether the notification adds a badge to the app’s icon, plays a notification sound, or displays an alert. */
             
             let content = UNMutableNotificationContent()
             content.body = text

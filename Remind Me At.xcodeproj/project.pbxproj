@@ -21,7 +21,31 @@
 		187466161F735B050092C745 /* ReminderDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187466151F735B050092C745 /* ReminderDetailTableViewController.swift */; };
 		187466191F742CEA0092C745 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187466181F742CEA0092C745 /* MapKit.framework */; };
 		1876C0FB1F74BFF0004BDD62 /* SearchLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876C0FA1F74BFF0004BDD62 /* SearchLocationTableViewController.swift */; };
+		18F91D011F7906BF008E5195 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D001F7906BF008E5195 /* FBSDKCoreKit.framework */; };
+		18F91D031F7906CF008E5195 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D021F7906CF008E5195 /* FBSDKLoginKit.framework */; };
+		18F91D051F7906E3008E5195 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D041F7906E3008E5195 /* Bolts.framework */; };
+		18F91D061F7909DE008E5195 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D021F7906CF008E5195 /* FBSDKLoginKit.framework */; };
+		18F91D071F7909DE008E5195 /* FBSDKLoginKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D021F7906CF008E5195 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18F91D081F7909DE008E5195 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D001F7906BF008E5195 /* FBSDKCoreKit.framework */; };
+		18F91D091F7909DE008E5195 /* FBSDKCoreKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D001F7906BF008E5195 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		18F91D0C1F790A3A008E5195 /* FacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F91D0B1F790A3A008E5195 /* FacebookViewController.swift */; };
+		18F91D131F791833008E5195 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F91D121F791833008E5195 /* GCDBlackBox.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		18F91D0A1F7909DF008E5195 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				18F91D071F7909DE008E5195 /* FBSDKLoginKit.framework in Embed Frameworks */,
+				18F91D091F7909DE008E5195 /* FBSDKCoreKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		185439241F714C33006321F2 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -40,6 +64,12 @@
 		187466151F735B050092C745 /* ReminderDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderDetailTableViewController.swift; sourceTree = "<group>"; };
 		187466181F742CEA0092C745 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1876C0FA1F74BFF0004BDD62 /* SearchLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewController.swift; sourceTree = "<group>"; };
+		18F91D001F7906BF008E5195 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		18F91D021F7906CF008E5195 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		18F91D041F7906E3008E5195 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		18F91D0B1F790A3A008E5195 /* FacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookViewController.swift; sourceTree = "<group>"; };
+		18F91D0E1F790C6B008E5195 /* Remind Me At-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Remind Me At-Bridging-Header.h"; sourceTree = "<group>"; };
+		18F91D121F791833008E5195 /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +78,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				187466191F742CEA0092C745 /* MapKit.framework in Frameworks */,
+				18F91D081F7909DE008E5195 /* FBSDKCoreKit.framework in Frameworks */,
+				18F91D011F7906BF008E5195 /* FBSDKCoreKit.framework in Frameworks */,
+				18F91D061F7909DE008E5195 /* FBSDKLoginKit.framework in Frameworks */,
+				18F91D031F7906CF008E5195 /* FBSDKLoginKit.framework in Frameworks */,
+				18F91D051F7906E3008E5195 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +103,7 @@
 		1855680D1F6FF32100147959 = {
 			isa = PBXGroup;
 			children = (
+				18F91CFF1F790658008E5195 /* facebookLogin */,
 				1813910A1F76D167004C6EE0 /* controller */,
 				1855682E1F6FF36200147959 /* Helper */,
 				185568181F6FF32100147959 /* Remind Me At */,
@@ -116,6 +152,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		18F91CFF1F790658008E5195 /* facebookLogin */ = {
+			isa = PBXGroup;
+			children = (
+				18F91D0B1F790A3A008E5195 /* FacebookViewController.swift */,
+				18F91D0E1F790C6B008E5195 /* Remind Me At-Bridging-Header.h */,
+				18F91D041F7906E3008E5195 /* Bolts.framework */,
+				18F91D021F7906CF008E5195 /* FBSDKLoginKit.framework */,
+				18F91D001F7906BF008E5195 /* FBSDKCoreKit.framework */,
+				18F91D121F791833008E5195 /* GCDBlackBox.swift */,
+			);
+			name = facebookLogin;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,6 +175,7 @@
 				185568121F6FF32100147959 /* Sources */,
 				185568131F6FF32100147959 /* Frameworks */,
 				185568141F6FF32100147959 /* Resources */,
+				18F91D0A1F7909DF008E5195 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,6 +198,7 @@
 				TargetAttributes = {
 					185568151F6FF32100147959 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -191,6 +242,8 @@
 				1876C0FB1F74BFF0004BDD62 /* SearchLocationTableViewController.swift in Sources */,
 				187466161F735B050092C745 /* ReminderDetailTableViewController.swift in Sources */,
 				185439271F715D2E006321F2 /* Utilities.swift in Sources */,
+				18F91D0C1F790A3A008E5195 /* FacebookViewController.swift in Sources */,
+				18F91D131F791833008E5195 /* GCDBlackBox.swift in Sources */,
 				185568301F6FF3C100147959 /* LocationManager.swift in Sources */,
 				187466121F735A4F0092C745 /* ReminderMasterTableViewController.swift in Sources */,
 				187466141F735A690092C745 /* ReminderTableViewCell.swift in Sources */,
@@ -318,10 +371,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Remind Me At/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rishabh.Remind-Me-At";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Remind Me At-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -330,10 +390,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Remind Me At/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rishabh.Remind-Me-At";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Remind Me At-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

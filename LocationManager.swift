@@ -11,16 +11,16 @@ import CoreLocation
 import MapKit
 
 class LocationManager: NSObject {
- 
+    
     //Mark: variables
     let manager = CLLocationManager()
     let geocoder = CLGeocoder()
     var onLocationFix : ((CLPlacemark?,Error?) -> Void)?
     
-//    So the first thing you need to do is to add one or both of the following keys to your Info.plist file:
-//    •NSLocationWhenInUseUsageDescription
-//    •NSLocationAlwaysUsageDescription
-
+    //    So the first thing you need to do is to add one or both of the following keys to your Info.plist file:
+    //    •NSLocationWhenInUseUsageDescription
+    //    •NSLocationAlwaysUsageDescription
+    
     
     //Mark: Init
     override init() {
@@ -35,18 +35,18 @@ class LocationManager: NSObject {
         //get location permission
         getPermission()
     }
-
+    
     //Mark: Functions
     
     //Ask user permission for location
     
-   /*  If your app can function with just foreground location but you have some parts that need Always (e.g. optional geofencing functionality) you would add both keys to the plist and start by requesting WhenInUse, then later asking for Always authorization. Unfortunately, this isn’t as simple as just calling [self.locationManager requestAlwaysAuthorization] at some later point (after getting WhenInUse authorization). Unless the user has never been asked for authorization (kCLAuthorizationStatusNotDetermined) you have to ask them to change it manually in the Settings.*/
+    /*  If your app can function with just foreground location but you have some parts that need Always (e.g. optional geofencing functionality) you would add both keys to the plist and start by requesting WhenInUse, then later asking for Always authorization. Unfortunately, this isn’t as simple as just calling [self.locationManager requestAlwaysAuthorization] at some later point (after getting WhenInUse authorization). Unless the user has never been asked for authorization (kCLAuthorizationStatusNotDetermined) you have to ask them to change it manually in the Settings.*/
     
     fileprivate func getPermission(){
         if CLLocationManager.authorizationStatus() == .notDetermined{
             manager.requestAlwaysAuthorization()
         }
-        }
+    }
     
     // Reverse Location
     func reverseLocation(location:Location, completion: @escaping(_ city:String, _ street: String) -> Void) {
@@ -76,7 +76,7 @@ class LocationManager: NSObject {
         let secondSpace = (location.subAdministrativeArea != nil && location.administrativeArea != nil) ? " " : ""
         
         let addressLine = String(
-            format:"%@%@%@%@%@%@",
+            format:"%@%@%@%@%@%@%@",
             //street number
             location.subThoroughfare ?? "",firstSpace,
             // street name
@@ -85,7 +85,7 @@ class LocationManager: NSObject {
             location.locality ?? "",secondSpace,
             //state
             location.administrativeArea ?? ""
-            )
+        )
         return addressLine
     }
     
@@ -114,13 +114,13 @@ extension LocationManager: CLLocationManagerDelegate{
     
     //Mark: location delegate
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-       
+        
         if status == .authorizedAlways {
-         manager.requestLocation()
+            manager.requestLocation()
         }
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-      
+        
         guard let location = locations.first else{
             return
         }

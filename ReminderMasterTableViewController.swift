@@ -11,7 +11,7 @@ import CoreData
 import UserNotifications
 
 class ReminderMasterTableViewController: UITableViewController {
-
+    
     //Mark: variables
     
     // this contains singleton of core data manager
@@ -23,23 +23,23 @@ class ReminderMasterTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- // set the fetech result controller delegate: the object that is notified when the fetched result changed
+        // set the fetech result controller delegate: the object that is notified when the fetched result changed
         coreDataManager.fetchedResultsController.delegate = self
         
         //Fetch the results from the database
         fetchResults()
         
-           }
-
-   
-
+    }
+    
+    
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // if there are reminder
         if let reminders = coreDataManager.fetchedResultsController.fetchedObjects?.count{
@@ -49,27 +49,27 @@ class ReminderMasterTableViewController: UITableViewController {
             return 1
         }
     }
-
-   
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell", for: indexPath) as! ReminderTableViewCell
         // retrieve the reminder at position index path
         let reminder = coreDataManager.fetchedResultsController.object(at: indexPath)
-
+        
         // Configure the cell...
         cell.configure(withReminder: reminder)
-
+        
         return cell
     }
-  
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //retriving the selected reminder
         selectedReminder = coreDataManager.fetchedResultsController.object(at: indexPath)
         // perform segue to the DetailTableviewController
         performSegue(withIdentifier: "ReminderDetail", sender: self)
     }
-
-   
+    
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         //set the delete action
         let delete = UITableViewRowAction(style: .destructive, title: "Delete"){ action, indexPath in
@@ -101,16 +101,9 @@ class ReminderMasterTableViewController: UITableViewController {
             let reminder = self.coreDataManager.fetchedResultsController.object(at: indexPath)
             reminder.isCompleted = false
             
-            /*
-             if let _ = reminder.location, let identifier = reminder.identifier {
-             self.notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
-             self.notificationCenter.removeDeliveredNotifications(withIdentifiers: [identifier])
-             }
-             */
-            
             self.coreDataManager.saveContext()
         }
-
+        
         let reminder = self.coreDataManager.fetchedResultsController.object(at: indexPath)
         //if the reminder is completed
         if reminder.isCompleted{
@@ -121,7 +114,7 @@ class ReminderMasterTableViewController: UITableViewController {
             return [delete, complete]
         }
     }
-   
+    
     @IBAction func createNewReminder(_ sender: Any) {
         //show an alert controller with a textfield and actions, it's used to set the title of the reminder:
         
@@ -164,7 +157,7 @@ class ReminderMasterTableViewController: UITableViewController {
         
         //presenting the controller
         self.present(alertController, animated: true, completion: nil)
-
+        
     }
     ///Fetch the results from the CoreData Database
     func fetchResults() {
@@ -184,9 +177,9 @@ class ReminderMasterTableViewController: UITableViewController {
             
             reminderDetailVc.reminder = selectedReminder
         }
-
+        
     }
-
+    
 }
 //---------------------
 //MARK: Extension

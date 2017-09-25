@@ -39,11 +39,11 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var mapView: MKMapView!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "iconL"), style: .plain, target: self, action: #selector(zoomToCurrentLocation))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image:#imageLiteral(resourceName: "CurrentLocation-1"), style: .plain, target: self, action: #selector(zoomToCurrentLocation))
         
         
         configureSearchController()
@@ -56,7 +56,7 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
             delegate?.writeLocationBack(toLocation: location, event: event)
         }
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -71,7 +71,7 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
         mapView = nil
     }
     
-   //Mark:button action
+    //Mark:button action
     
     @IBAction func eventChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
@@ -101,7 +101,7 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
         cell.detailTextLabel?.text = locationManager.parseAdress(location: location)
         return cell
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         mapContainerView.isHidden = false
         searchController.searchBar.endEditing(true)
@@ -123,17 +123,36 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
     }
     
     fileprivate func getLocations(forSearchString searchString:String){
+        
         let request = MKLocalSearchRequest()
+        // ativity indicator start
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         request.naturalLanguageQuery = searchString
         request.region = mapView.region
         
         let search = MKLocalSearch(request: request)
         search.start { (response, error) in
+            
+            
+            guard error == nil else{
+                
+                return
+            }
+            
             guard let response = response else{
+                // alert in case geocode fails
+                
+                let alert = UIAlertController(title: "", message: "Unable to geocode.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
                 return
             }
             self.locations = response.mapItems
             self.tableView.reloadData()
+            
+            //activity indicator stops
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
         }
     }
@@ -179,7 +198,7 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
         
     }
     
-  }
+}
 extension SearchLocationTableViewController:MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if overlay is MKCircle{

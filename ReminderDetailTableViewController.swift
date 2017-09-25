@@ -22,12 +22,12 @@ class ReminderDetailTableViewController: UITableViewController,writeLocationBack
     var location: CLLocation?
     var event: String?
     var eventBool: Bool?
-
+    
     //Mark: outlets
     @IBOutlet weak var locationCell: UITableViewCell!
-   @IBOutlet weak var reminderTitleLabel: UILabel!
+    @IBOutlet weak var reminderTitleLabel: UILabel!
     @IBOutlet weak var locationSwitch: UISwitch!
-
+    
     //Mark: view
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class ReminderDetailTableViewController: UITableViewController,writeLocationBack
         // set the text of the location cell
         locationCell.textLabel?.text = "Location"
         locationCell.detailTextLabel?.text = ""
-        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -58,7 +58,7 @@ class ReminderDetailTableViewController: UITableViewController,writeLocationBack
             }
         }
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -73,7 +73,7 @@ class ReminderDetailTableViewController: UITableViewController,writeLocationBack
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
- 
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 1 && indexPath.row == 1 {
             return 64.0
@@ -141,7 +141,7 @@ class ReminderDetailTableViewController: UITableViewController,writeLocationBack
             coreDataManager.saveContext()
         }
     }
-  
+    
     func reverseLocation() {
         
         if let locationToReverse = reminder?.location, let event = reminder?.location?.event {
@@ -152,7 +152,7 @@ class ReminderDetailTableViewController: UITableViewController,writeLocationBack
             }
         }
     }
-//Mark: navigation
+    //Mark: navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SearchLocationView" {
@@ -161,9 +161,9 @@ class ReminderDetailTableViewController: UITableViewController,writeLocationBack
             if let reminder = self.reminder {
                 
                 searchLocationDetailVC.reminder = reminder
-            searchLocationDetailVC.delegate = self
+                searchLocationDetailVC.delegate = self
             }
         }
     }
-
+    
 }
