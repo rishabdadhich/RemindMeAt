@@ -1,11 +1,14 @@
 # RemindMeAt
 
 The RemindMeAt is the swift app. This app reminds you when you are close to location or leaving location.
-The goal was to develop a CoreData, MapKit + CLLocation based swift app
+The goal was to develop a Facebook SDK, CoreData, MapKit + CLLocation based swift app
 
 ## Features
 
 This is the list of the features:
+
+- Facebook SDK is used as networking for login in App
+
 - App is based on a Master-Detail style tablleView
 
 - CoreData is used as the foundation for the app
@@ -21,6 +24,8 @@ This is the list of the features:
 - It is possible to complete or incomplete the reminder's task
 
 - Location can be searched through a search bar
+
+- Navigation bar right bar button is used to add pin to the user current location
 
 - Notifications are send as the user enters or leaves the location of reminder
 
