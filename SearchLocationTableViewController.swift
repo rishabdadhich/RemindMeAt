@@ -56,7 +56,7 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
             delegate?.writeLocationBack(toLocation: location, event: event)
         }
     }
-    
+       
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -124,6 +124,23 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
     
     fileprivate func getLocations(forSearchString searchString:String){
         
+        if Reachability.isConnectedToNetwork() == true
+        {
+            print("Connected")
+        }
+        else
+        {
+            let controller = UIAlertController(title: "No Internet Detected", message: "This app requires an Internet connection", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            controller.addAction(ok)
+            controller.addAction(cancel)
+            
+            present(controller, animated: true, completion: nil)
+        }
+
+        
         let request = MKLocalSearchRequest()
         // ativity indicator start
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -133,6 +150,8 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
         
         let search = MKLocalSearch(request: request)
         search.start { (response, error) in
+            
+         UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             
             guard error == nil else{
@@ -151,8 +170,6 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
             self.locations = response.mapItems
             self.tableView.reloadData()
             
-            //activity indicator stops
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
         }
     }

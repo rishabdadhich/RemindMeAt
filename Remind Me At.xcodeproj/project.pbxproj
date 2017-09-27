@@ -21,6 +21,7 @@
 		187466161F735B050092C745 /* ReminderDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187466151F735B050092C745 /* ReminderDetailTableViewController.swift */; };
 		187466191F742CEA0092C745 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187466181F742CEA0092C745 /* MapKit.framework */; };
 		1876C0FB1F74BFF0004BDD62 /* SearchLocationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1876C0FA1F74BFF0004BDD62 /* SearchLocationTableViewController.swift */; };
+		18CF47511F7C305B00E93810 /* internetConnectiion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CF47501F7C305B00E93810 /* internetConnectiion.swift */; };
 		18F91D011F7906BF008E5195 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D001F7906BF008E5195 /* FBSDKCoreKit.framework */; };
 		18F91D031F7906CF008E5195 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D021F7906CF008E5195 /* FBSDKLoginKit.framework */; };
 		18F91D051F7906E3008E5195 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F91D041F7906E3008E5195 /* Bolts.framework */; };
@@ -64,6 +65,7 @@
 		187466151F735B050092C745 /* ReminderDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderDetailTableViewController.swift; sourceTree = "<group>"; };
 		187466181F742CEA0092C745 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1876C0FA1F74BFF0004BDD62 /* SearchLocationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationTableViewController.swift; sourceTree = "<group>"; };
+		18CF47501F7C305B00E93810 /* internetConnectiion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = internetConnectiion.swift; sourceTree = "<group>"; };
 		18F91D001F7906BF008E5195 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		18F91D021F7906CF008E5195 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		18F91D041F7906E3008E5195 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				187466151F735B050092C745 /* ReminderDetailTableViewController.swift */,
 				187466131F735A690092C745 /* ReminderTableViewCell.swift */,
 				187466111F735A4F0092C745 /* ReminderMasterTableViewController.swift */,
+				18CF47501F7C305B00E93810 /* internetConnectiion.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				18F91D131F791833008E5195 /* GCDBlackBox.swift in Sources */,
 				185568301F6FF3C100147959 /* LocationManager.swift in Sources */,
 				187466121F735A4F0092C745 /* ReminderMasterTableViewController.swift in Sources */,
+				18CF47511F7C305B00E93810 /* internetConnectiion.swift in Sources */,
 				187466141F735A690092C745 /* ReminderTableViewCell.swift in Sources */,
 				185568221F6FF32100147959 /* Remind_Me_At.xcdatamodeld in Sources */,
 				185439291F715D8C006321F2 /* NotificationManager.swift in Sources */,

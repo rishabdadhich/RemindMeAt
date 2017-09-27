@@ -13,28 +13,60 @@ class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
     //Mark:outlets
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var namelbl: UILabel!
-    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
     
-    var loginButton:FBSDKLoginButton = {
-        let button = FBSDKLoginButton()
-        button.readPermissions = ["email"]
-        return button
-    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(loginButton)
-        loginButton.center = buttonView.center
-        
-        loginButton.delegate = self
-        
-        if let token = FBSDKAccessToken.current(){
-            fetchProfile()
+        if FBSDKAccessToken.current() == nil {
+            print("user is not logged in")
+        }else{
+            print("user logged in")
         }
 
-
+        loginButton.delegate = self
+        loginButton.readPermissions = ["email"]
+        
+                if let token = FBSDKAccessToken.current(){
+                    fetchProfile()
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        if (FBSDKAccessToken.current() != nil) {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? UINavigationController!
+            print("successfully loged in")
+            self.present(controller!, animated: true, completion: nil)
+            
+        }
+        
+    }
+//check for net connection
+    override func viewDidAppear(_ animated: Bool) {
+        // ViewControllers view ist fully loaded and could present further ViewController
+        //Here you could do any other UI operations
+        if Reachability.isConnectedToNetwork() == true
+        {
+            print("Connected")
+        }
+        else
+        {
+            let controller = UIAlertController(title: "No Internet Detected", message: "This app requires an Internet connection", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+            let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            
+            controller.addAction(ok)
+            controller.addAction(cancel)
+            
+            present(controller, animated: true, completion: nil)
+        }
+        
     }
     
     func fetchProfile(){
@@ -106,14 +138,19 @@ class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+        if let userToken = result.token{
+            let token:FBSDKAccessToken = result.token
+            print("token = \(FBSDKAccessToken.current().tokenString)")
         print("completed login")
+            
         fetchProfile()
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? UINavigationController!
         print("successfully loged in")
         self.present(controller!, animated: true, completion: nil)
     }
-    
+    }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
     }
@@ -130,14 +167,5 @@ class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }
