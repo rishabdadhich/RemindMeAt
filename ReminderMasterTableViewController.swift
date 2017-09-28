@@ -118,7 +118,8 @@ class ReminderMasterTableViewController: UITableViewController {
     @IBAction func logoutTapped(_ sender: Any) {
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
-        
+        //set bool
+        UserDefaults.standard.set(false, forKey: "login")
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "viewController") as UIViewController!
         
         self.present(controller!, animated: true, completion: nil)

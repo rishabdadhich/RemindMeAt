@@ -29,7 +29,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound]) { granted, error in }
         
+        // check for user login
+        if (UserDefaults.standard.object(forKey: "login") == nil)
+        {
+            UserDefaults.standard.set(false, forKey: "login")
+        }
+       else if (UserDefaults.standard.bool(forKey: "login") == true)
+        {
+          screenlaunch(str: "reminderViewController")
+            }
+        else {
+            screenlaunch(str: "viewController")
+        }
         return true
+        
+    }
+    
+    func screenlaunch(str : String )
+    {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let homeViewController = mainStoryboard.instantiateViewController(withIdentifier: str)
+        let navigationController :UINavigationController = UINavigationController(rootViewController: homeViewController)
+ //       navigationController.isNavigationBarHidden = true
+        window!.rootViewController = nil
+        window!.rootViewController = navigationController
+        window?.makeKey()
         
     }
     

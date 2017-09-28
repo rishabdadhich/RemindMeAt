@@ -145,6 +145,8 @@ class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
         print("completed login")
             
         fetchProfile()
+            //set bool for userdefault
+            UserDefaults.standard.set(true, forKey: "login")
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? UINavigationController!
         print("successfully loged in")
@@ -152,7 +154,7 @@ class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
     }
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
+       
     }
     
     func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
