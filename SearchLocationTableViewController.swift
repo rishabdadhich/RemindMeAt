@@ -176,6 +176,7 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
     
     @objc func zoomToCurrentLocation() {
         mapContainerView.isHidden = false
+        mapView.showsUserLocation = true
         
         // clear existing pins
         mapView.removeAnnotations(mapView.annotations)

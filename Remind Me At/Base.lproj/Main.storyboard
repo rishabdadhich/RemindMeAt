@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BZd-uJ-bxQ" id="iO3-69-NKc">
-                                    <rect key="frame" x="0.0" y="0.0" width="381" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="381" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meO-gJ-54K">
@@ -107,7 +107,7 @@
                                         <rect key="frame" x="0.0" y="115" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wNw-zG-LU1" id="GTi-eS-0bb">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind me at location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frV-Ad-OTK">
@@ -224,7 +224,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-1g-77s">
-                                <rect key="frame" x="0.0" y="497" width="414" height="239"/>
+                                <rect key="frame" x="0.0" y="557" width="414" height="179"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="llN-d7-Vu5">
                                         <rect key="frame" x="8" y="8" width="398" height="29"/>
@@ -237,31 +237,31 @@
                                         </connections>
                                     </segmentedControl>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Y9-dN-bHy">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="195"/>
+                                        <rect key="frame" x="0.0" y="44" width="414" height="135"/>
                                     </mapView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="0Y9-dN-bHy" firstAttribute="top" secondItem="llN-d7-Vu5" secondAttribute="bottom" constant="8" id="5LX-n5-0zF"/>
-                                    <constraint firstItem="llN-d7-Vu5" firstAttribute="leading" secondItem="gvb-1g-77s" secondAttribute="leading" constant="8" id="EaA-nk-K7g"/>
-                                    <constraint firstItem="llN-d7-Vu5" firstAttribute="top" secondItem="gvb-1g-77s" secondAttribute="top" constant="8" id="K3l-tJ-T1Y"/>
-                                    <constraint firstAttribute="bottom" secondItem="0Y9-dN-bHy" secondAttribute="bottom" id="MdL-4X-hHE"/>
-                                    <constraint firstItem="0Y9-dN-bHy" firstAttribute="top" secondItem="llN-d7-Vu5" secondAttribute="bottom" constant="8" id="QPi-Rg-0nZ"/>
-                                    <constraint firstItem="0Y9-dN-bHy" firstAttribute="leading" secondItem="gvb-1g-77s" secondAttribute="leading" id="VxL-Ib-Ga0"/>
-                                    <constraint firstAttribute="trailing" secondItem="0Y9-dN-bHy" secondAttribute="trailing" id="Ysj-g1-XFx"/>
-                                    <constraint firstAttribute="trailing" secondItem="llN-d7-Vu5" secondAttribute="trailing" constant="8" id="hk1-tm-am0"/>
-                                    <constraint firstAttribute="height" constant="239" id="hzR-8Q-k2j"/>
+                                    <constraint firstAttribute="height" constant="179" id="3V6-mD-Xs1"/>
+                                    <constraint firstAttribute="trailing" secondItem="0Y9-dN-bHy" secondAttribute="trailing" id="BrW-Q9-Xap"/>
+                                    <constraint firstItem="llN-d7-Vu5" firstAttribute="top" secondItem="gvb-1g-77s" secondAttribute="top" constant="8" id="HBw-2y-5S6"/>
+                                    <constraint firstItem="0Y9-dN-bHy" firstAttribute="top" secondItem="llN-d7-Vu5" secondAttribute="bottom" constant="8" id="SDo-qK-XMf"/>
+                                    <constraint firstItem="0Y9-dN-bHy" firstAttribute="leading" secondItem="gvb-1g-77s" secondAttribute="leading" id="UC9-Jx-Nbl"/>
+                                    <constraint firstItem="llN-d7-Vu5" firstAttribute="leading" secondItem="gvb-1g-77s" secondAttribute="leading" constant="8" id="bps-Fh-CS3"/>
+                                    <constraint firstItem="0Y9-dN-bHy" firstAttribute="top" secondItem="llN-d7-Vu5" secondAttribute="bottom" constant="8" id="j1u-5t-gJS"/>
+                                    <constraint firstAttribute="trailing" secondItem="llN-d7-Vu5" secondAttribute="trailing" constant="8" id="koS-Y7-Gh6"/>
+                                    <constraint firstAttribute="bottom" secondItem="0Y9-dN-bHy" secondAttribute="bottom" id="tcy-NR-yaA"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Sfs-8Y-ox4" secondAttribute="trailing" id="109-aR-pc0"/>
-                            <constraint firstAttribute="trailing" secondItem="gvb-1g-77s" secondAttribute="trailing" id="Gh6-mD-Hg2"/>
+                            <constraint firstAttribute="trailing" secondItem="gvb-1g-77s" secondAttribute="trailing" id="4rd-OV-O8U"/>
+                            <constraint firstItem="gvb-1g-77s" firstAttribute="leading" secondItem="oxe-Pa-BiV" secondAttribute="leading" id="BYv-SH-wOG"/>
                             <constraint firstItem="Sfs-8Y-ox4" firstAttribute="top" secondItem="oxe-Pa-BiV" secondAttribute="top" id="XX0-me-KII"/>
                             <constraint firstItem="hBI-Pe-RAd" firstAttribute="top" secondItem="Sfs-8Y-ox4" secondAttribute="bottom" id="bDK-F7-Uky"/>
-                            <constraint firstItem="gvb-1g-77s" firstAttribute="leading" secondItem="oxe-Pa-BiV" secondAttribute="leading" id="jHP-xB-N8K"/>
-                            <constraint firstItem="hBI-Pe-RAd" firstAttribute="top" secondItem="gvb-1g-77s" secondAttribute="bottom" id="vn4-r2-5GZ"/>
+                            <constraint firstItem="hBI-Pe-RAd" firstAttribute="top" secondItem="gvb-1g-77s" secondAttribute="bottom" id="u3w-cG-k81"/>
                             <constraint firstItem="Sfs-8Y-ox4" firstAttribute="leading" secondItem="oxe-Pa-BiV" secondAttribute="leading" id="zPm-El-gRS"/>
                         </constraints>
                     </view>
@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L2s-m7-Cql" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4107.2463768115949" y="37.5"/>
+            <point key="canvasLocation" x="4105.9859154929582" y="37.5"/>
         </scene>
         <!--Facebook View Controller-->
         <scene sceneID="ufB-H7-gRT">
