@@ -120,10 +120,8 @@ class ReminderMasterTableViewController: UITableViewController {
         loginManager.logOut()
         //set bool
         UserDefaults.standard.set(false, forKey: "login")
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "viewController") as UIViewController!
         
-        self.present(controller!, animated: true, completion: nil)
-        
+        dismiss(animated: true, completion: nil)
     }
     @IBAction func createNewReminder(_ sender: Any) {
         //show an alert controller with a textfield and actions, it's used to set the title of the reminder:

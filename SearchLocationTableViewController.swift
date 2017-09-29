@@ -56,7 +56,7 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
             delegate?.writeLocationBack(toLocation: location, event: event)
         }
     }
-       
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -113,6 +113,11 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
         
         locationToPassBack = CLLocation(latitude: selectedLocation.coordinate.latitude, longitude: selectedLocation.coordinate.longitude)
     }
+    // padding at the bottom
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+    
     
     //Mark: search
     func updateSearchResults(for searchController: UISearchController) {
@@ -139,7 +144,7 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
             
             present(controller, animated: true, completion: nil)
         }
-
+        
         
         let request = MKLocalSearchRequest()
         // ativity indicator start
@@ -151,7 +156,7 @@ class SearchLocationTableViewController: UIViewController,UITableViewDelegate,UI
         let search = MKLocalSearch(request: request)
         search.start { (response, error) in
             
-         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             
             guard error == nil else{

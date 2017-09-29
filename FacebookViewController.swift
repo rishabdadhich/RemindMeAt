@@ -9,7 +9,7 @@
 import UIKit
 
 class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
-
+    
     //Mark:outlets
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var namelbl: UILabel!
@@ -25,12 +25,12 @@ class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
         }else{
             print("user logged in")
         }
-
+        
         loginButton.delegate = self
         loginButton.readPermissions = ["email"]
         
-                if let token = FBSDKAccessToken.current(){
-                    fetchProfile()
+        if let token = FBSDKAccessToken.current(){
+            fetchProfile()
         }
         // Do any additional setup after loading the view.
     }
@@ -47,7 +47,7 @@ class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
         }
         
     }
-//check for net connection
+    //check for net connection
     override func viewDidAppear(_ animated: Bool) {
         // ViewControllers view ist fully loaded and could present further ViewController
         //Here you could do any other UI operations
@@ -76,7 +76,7 @@ class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
         FBSDKGraphRequest(graphPath: "me", parameters: parameters)
             .start(completionHandler:  {
                 (connection, result, error) in
-                               
+                
                 guard let result = result as? NSDictionary else{
                     print("no result")
                     return
@@ -142,32 +142,23 @@ class FacebookViewController: UIViewController,FBSDKLoginButtonDelegate {
         if let userToken = result.token{
             let token:FBSDKAccessToken = result.token
             print("token = \(FBSDKAccessToken.current().tokenString)")
-        print("completed login")
+            print("completed login")
             
-        fetchProfile()
+            fetchProfile()
             //set bool for userdefault
             UserDefaults.standard.set(true, forKey: "login")
-        
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? UINavigationController!
-        print("successfully loged in")
-        self.present(controller!, animated: true, completion: nil)
-    }
+            
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController") as? UINavigationController!
+            print("successfully loged in")
+            self.present(controller!, animated: true, completion: nil)
+        }
     }
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-       
+        
     }
     
     func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
         return true
     }
     
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-   
 }
